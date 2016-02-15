@@ -1,0 +1,8 @@
+prefix=/home/chloe/.git/Projet_Monitoring/catkin_ws/devel
+
+Name: moniteur
+Description: Description of moniteur
+Version: 0.0.0
+Cflags: -I/home/chloe/.git/Projet_Monitoring/catkin_ws/src/moniteur/include
+Libs: -L/home/chloe/.git/Projet_Monitoring/catkin_ws/devel/lib -lmoniteur
+Requires: message_runtime roscpp std_msgs

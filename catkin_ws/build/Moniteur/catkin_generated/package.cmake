@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "Moniteur")
+set(Moniteur_MAINTAINER "chloe <chloe@todo.todo>")
+set(Moniteur_DEPRECATED "")
+set(Moniteur_VERSION "0.0.0")
+set(Moniteur_BUILD_DEPENDS "roscpp" "std_msgs")
+set(Moniteur_RUN_DEPENDS "roscpp" "std_msgs")
+set(Moniteur_BUILDTOOL_DEPENDS "catkin")

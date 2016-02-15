@@ -1,0 +1,8 @@
+prefix=/home/chloe/.git/Projet_Monitoring/catkin_ws/devel
+
+Name: Moniteur
+Description: Description of Moniteur
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/chloe/.git/Projet_Monitoring/catkin_ws/devel/lib 
+Requires: 

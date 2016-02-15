@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "moniteur")
+set(moniteur_MAINTAINER "chloe <cmaingot@laas.fr>")
+set(moniteur_DEPRECATED "")
+set(moniteur_VERSION "0.0.0")
+set(moniteur_BUILD_DEPENDS "roscpp" "std_msgs" "message_runtime")
+set(moniteur_RUN_DEPENDS "roscpp" "std_msgs" "message_runtime")
+set(moniteur_BUILDTOOL_DEPENDS "catkin")
