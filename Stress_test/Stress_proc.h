@@ -7,21 +7,24 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <iostream>
+#include <signal.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include "Stress_CPU.h"
 
-
-class Stress_proc : public Stress
+class Stress_proc
 {
     public:
-        Stress_proc();
-        void run(int,float,int);
+        Stress_proc(int);
+        int run(int,float,int);
         void affichage();
-    protected:
-    void utile();
     private:
-    void calcul();
-    int taille;
-    unsigned long int a;
-    unsigned long int b;
+    void kill_stress_cpu();
+    void creation_stress();
+    int nb_cpu;
+    pid_t pid[10];
+    int duree;
+    float rate;
 };
 
 #endif // STRESS_PROC_H

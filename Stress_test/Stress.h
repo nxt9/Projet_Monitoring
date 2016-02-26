@@ -6,17 +6,18 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <iostream>
-
+#include <string.h>
+using namespace std;
 class Stress
 {
     public:
-        virtual void run(int,float,int)=0;
+        virtual int run(int,float,int)=0;
         virtual void affichage()=0;
         Stress();
     protected:
     virtual void utile();
     void occupation_rate();
-    void duration();
+    int duration();
     int duree;
     float rate;
     int data[5];

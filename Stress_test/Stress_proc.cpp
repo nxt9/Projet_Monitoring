@@ -1,10 +1,28 @@
 #include "Stress_proc.h"
 using namespace std;
 
-Stress_proc::Stress_proc()
+Stress_proc::Stress_proc(int arg_nb_cpu=1)
 {
- a=1;
- b=1;
+nb_cpu=arg_nb_cpu;
+for(int i;i<=nb_cpu-1;i++)
+{
+pid[i]=0;
+}
+string pid=to_string((int)getpid());
+string cmd1="sudo renice -n -20 -p "+pid;
+char * b =(char *) malloc(cmd1.size());
+strcpy(b, cmd1.c_str());
+system(b);
+}
+
+void Stress_proc::kill_stress_cpu()
+{
+for(int i=0;i<=nb_cpu-1;i++)
+{
+if (pid[i]!=0){
+kill(pid[i],SIGKILL);
+}
+}
 }
 
 void Stress_proc::affichage()
@@ -13,25 +31,36 @@ void Stress_proc::affichage()
 }
 
 
-void Stress_proc::run(int arg_duree,float arg_pourcentage, int arg_taille)
+void Stress_proc::creation_stress()
 {
-duree= arg_duree;
-rate= arg_pourcentage;
-taille= arg_taille;
-duration();
+Stress_CPU cpu;
+for(int i=0;i<=nb_cpu-1;i++)
+{
+switch (pid[i]= fork ())
+            {
+            case 0:   /* child */
+  cout << "FILS"<<i<<endl;
+
+  exit(cpu.run(duree,rate,0));
+                break;
+            case -1: /* error */
+
+cout << "ERREUR FORK"<<endl;
+                break;
+            default:           /* parent */
+cout << "Stress" <<pid[i]<<endl;
+            }
+
+}
+int lol;
+waitpid(pid[nb_cpu-1],&lol,0);
 }
 
-
-
-
-void Stress_proc::utile()
+int Stress_proc::run(int arg_duree, float arg_rate, int taille)
 {
-calcul();
-cout<<"lol"<<endl;
+rate=arg_rate;
+duree=arg_duree;
+creation_stress();
+return(1);
 }
 
-void Stress_proc::calcul()
-{
-b=b*a;
-a++;
-}

@@ -12,7 +12,9 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +24,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -32,6 +35,20 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Stress.cpp" />
+		<Unit filename="Stress.h" />
+		<Unit filename="Stress_CPU.cpp" />
+		<Unit filename="Stress_CPU.h" />
+		<Unit filename="Stress_IO.cpp" />
+		<Unit filename="Stress_IO.h" />
+		<Unit filename="Stress_fichier.cpp" />
+		<Unit filename="Stress_fichier.h" />
+		<Unit filename="Stress_mem.cpp" />
+		<Unit filename="Stress_mem.h" />
+		<Unit filename="Stress_proc.cpp" />
+		<Unit filename="Stress_proc.h" />
+		<Unit filename="Stress_processus.cpp" />
+		<Unit filename="Stress_processus.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

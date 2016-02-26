@@ -2,17 +2,24 @@
 
 using namespace std;
 Stress::Stress(){
+string pid=to_string((int)getpid());
+string cmd1="sudo renice -n -20 -p "+pid;
+char * b =(char *) malloc(cmd1.size());
+strcpy(b, cmd1.c_str());
+system(b);
+
 pause.tv_sec=0;        /* seconds */
 
 }
 // CONSTRUCTEUR
-void Stress::duration(){
+int Stress::duration(){
 clock_gettime(CLOCK_REALTIME, &start_d);
 do{
 occupation_rate();
 clock_gettime(CLOCK_REALTIME, &stop_d);
 T_d=(double)((stop_d.tv_nsec * 1e-9 + stop_d.tv_sec) - (start_d.tv_nsec * 1e-9 + start_d.tv_sec));
 }while(T_d<=duree);
+return(1);
 }
 
 

@@ -7,12 +7,12 @@
 #include <iostream>
 #include <stdio.h>
 #include <unistd.h>
-#include <iostream>
+#include <fstream>
 class Stress_fichier : public Stress
 {
     public:
         Stress_fichier();
-        void run(int,float,int);
+        int run(int,float,int);
         void affichage();
     protected:
     void utile();

@@ -15,7 +15,7 @@ cout << "lol"<< endl;//"index:"<<data[0]<<"\t"<< "Ton:"<<data[1]<<"\t"<< "Toff:"
 }
 
 
-void Stress_fichier::run(int arg_duree,float arg_pourcentage, int arg_taille)
+int Stress_fichier::run(int arg_duree,float arg_pourcentage, int arg_taille)
 {
 duree= arg_duree;
 rate= arg_pourcentage;
@@ -26,7 +26,8 @@ duration();
 
 void Stress_fichier::utile()
 {
-
-cout<<"lol"<<endl;
+ofstream fichier("test.txt", ios::out | ios::app);
+fichier <<"o";
+fichier.close();  //déclaration du flux et ouverture du fichier
 }
 

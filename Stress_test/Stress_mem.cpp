@@ -16,12 +16,12 @@ cout << "index:"<<data[0]<<"\t"<< "Ton:"<<data[1]<<"\t"<< "Toff:"<<data[2]<<"\t"
 }
 
 
-void Stress_mem::run(int arg_duree,float arg_pourcentage, int arg_taille)
+int Stress_mem::run(int arg_duree,float arg_pourcentage, int arg_taille)
 {
 duree= arg_duree;
 rate= arg_pourcentage;
 taille= arg_taille;
-duration();
+return duration();
 }
 
 void Stress_mem::mem(){
