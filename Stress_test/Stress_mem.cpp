@@ -8,18 +8,25 @@ Stress_mem::Stress_mem()
  tab[0]=(int)NULL;
  tab[1]=(int)NULL;
 }
-
+Stress_mem::~Stress_mem()
+{
+if (index>0){
+tab[(index-1)%2]=*(int*)tab[index%2];
+free((int*)tab[index%2]);
+index--;
+}
+}
 
 void Stress_mem::affichage()
 {
-cout << "index:"<<data[0]<<"\t"<< "Ton:"<<data[1]<<"\t"<< "Toff:"<<data[2]<<"\t" << "Mem:"<<data[3]<<"\t"<<endl;
+//cout << "index:"<<data[0]<<"\t"<< "Ton:"<<data[1]<<"\t"<< "Toff:"<<data[2]<<"\t" << "Mem:"<<data[3]<<"\t"<<endl;
 }
 
 
-int Stress_mem::run(int arg_duree,float arg_pourcentage, int arg_taille)
+int Stress_mem::run(int arg_duree,int arg_pourcentage, int arg_taille)
 {
 duree= arg_duree;
-rate= arg_pourcentage;
+convertion_pourcentage(arg_pourcentage);
 taille= arg_taille;
 return duration();
 }
@@ -38,7 +45,7 @@ index++;
 void Stress_mem::utile()
 {
 mem();
-cout<<"lol"<<endl;
+//cout<<"lol"<<endl;
 }
 
 

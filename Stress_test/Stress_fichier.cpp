@@ -11,14 +11,14 @@ Stress_fichier::Stress_fichier()
 
 void Stress_fichier::affichage()
 {
-cout << "lol"<< endl;//"index:"<<data[0]<<"\t"<< "Ton:"<<data[1]<<"\t"<< "Toff:"<<data[2]<<"\t" << "Mem:"<<data[3]<<"\t"<<endl;
+//cout << "lol"<< endl;//"index:"<<data[0]<<"\t"<< "Ton:"<<data[1]<<"\t"<< "Toff:"<<data[2]<<"\t" << "Mem:"<<data[3]<<"\t"<<endl;
 }
 
 
-int Stress_fichier::run(int arg_duree,float arg_pourcentage, int arg_taille)
+int Stress_fichier::run(int arg_duree,int arg_pourcentage, int arg_taille)
 {
 duree= arg_duree;
-rate= arg_pourcentage;
+convertion_pourcentage(arg_pourcentage);
 taille= arg_taille;
 duration();
 }

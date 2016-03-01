@@ -39,6 +39,8 @@
 		<Unit filename="Stress.h" />
 		<Unit filename="Stress_CPU.cpp" />
 		<Unit filename="Stress_CPU.h" />
+		<Unit filename="Stress_INTERFACE.cpp" />
+		<Unit filename="Stress_INTERFACE.h" />
 		<Unit filename="Stress_IO.cpp" />
 		<Unit filename="Stress_IO.h" />
 		<Unit filename="Stress_fichier.cpp" />

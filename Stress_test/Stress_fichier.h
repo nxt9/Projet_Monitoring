@@ -12,7 +12,7 @@ class Stress_fichier : public Stress
 {
     public:
         Stress_fichier();
-        int run(int,float,int);
+        int run(int,int,int);
         void affichage();
     protected:
     void utile();

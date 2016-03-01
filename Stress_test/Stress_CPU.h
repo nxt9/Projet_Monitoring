@@ -12,7 +12,7 @@ class Stress_CPU : public Stress
 {
     public:
         Stress_CPU();
-        int run(int,float,int);
+        int run(int,int,int);
         void affichage();
     protected:
     void utile();

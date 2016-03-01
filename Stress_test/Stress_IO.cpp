@@ -14,10 +14,11 @@ void Stress_IO::affichage()
 }
 
 
-int Stress_IO::run(int arg_duree,float arg_pourcentage, int arg_taille)
+int Stress_IO::run(int arg_duree,int arg_pourcentage, int arg_taille)
 {
 duree= arg_duree;
-rate= arg_pourcentage;
+
+convertion_pourcentage(arg_pourcentage);
 taille= arg_taille;
 return duration();
 }
@@ -26,7 +27,7 @@ return duration();
 void Stress_IO::utile()
 {
 io();
-affichage();
+//affichage();
 }
 
 void Stress_IO::io()

@@ -11,10 +11,11 @@ using namespace std;
 class Stress
 {
     public:
-        virtual int run(int,float,int)=0;
+        virtual int run(int,int,int)=0;
         virtual void affichage()=0;
         Stress();
     protected:
+    void convertion_pourcentage(int);
     virtual void utile();
     void occupation_rate();
     int duration();

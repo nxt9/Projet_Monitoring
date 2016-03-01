@@ -16,7 +16,8 @@ class Stress_mem : public Stress
 {
     public:
         Stress_mem();
-        int run(int,float,int);
+        ~Stress_mem();
+        int run(int,int,int);
         void affichage();
     protected:
     void utile();

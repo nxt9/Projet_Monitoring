@@ -14,10 +14,11 @@ void Stress_CPU::affichage()
 }
 
 
-int Stress_CPU::run(int arg_duree,float arg_pourcentage, int arg_taille)
+int Stress_CPU::run(int arg_duree,int arg_pourcentage, int arg_taille)
 {
 duree= arg_duree;
-rate= arg_pourcentage;
+
+convertion_pourcentage(arg_pourcentage);
 taille= arg_taille;
  return duration();
 }
@@ -31,6 +32,8 @@ affichage();
 
 void Stress_CPU::calcul()
 {
+for(int i=0;i<=10000;i++){
     sqrt (rand ());
+}
 }
 

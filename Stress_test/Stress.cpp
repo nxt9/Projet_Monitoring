@@ -2,12 +2,6 @@
 
 using namespace std;
 Stress::Stress(){
-string pid=to_string((int)getpid());
-string cmd1="sudo renice -n -20 -p "+pid;
-char * b =(char *) malloc(cmd1.size());
-strcpy(b, cmd1.c_str());
-system(b);
-
 pause.tv_sec=0;        /* seconds */
 
 }
@@ -34,5 +28,17 @@ nanosleep(&pause,0); // problème !!!
 }
 
 void Stress::utile(){
+
+}
+
+
+void Stress::convertion_pourcentage(int arg_pourcentage){
+if (arg_pourcentage>=50){
+rate=1-arg_pourcentage/100;
+}
+else{
+rate=1+arg_pourcentage/100;
+}
+
 
 }

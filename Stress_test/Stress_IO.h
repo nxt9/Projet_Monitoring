@@ -11,7 +11,7 @@ class Stress_IO : public Stress
 {
     public:
         Stress_IO();
-        int run(int,float,int);
+        int run(int,int,int);
         void affichage();
     protected:
     void utile();

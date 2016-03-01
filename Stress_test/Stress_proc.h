@@ -16,7 +16,7 @@ class Stress_proc
 {
     public:
         Stress_proc(int);
-        int run(int,float,int);
+        int run(int,int,int);
         void affichage();
     private:
     void kill_stress_cpu();
@@ -24,7 +24,7 @@ class Stress_proc
     int nb_cpu;
     pid_t pid[10];
     int duree;
-    float rate;
+    int rate;
 };
 
 #endif // STRESS_PROC_H

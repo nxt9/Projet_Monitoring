@@ -12,8 +12,8 @@
 class Stress_processus : public Stress
 {
     public:
-        Stress_processus(int);
-        int run(int,float,int);
+        Stress_processus();
+        int run(int,int,int);
         void affichage();
     protected:
     void utile();
