@@ -217,7 +217,7 @@ fichier.close();
 void Stress_interface::recuperation()
 {
  ifstream fichier("config.txt", ios::in);
-
+if(fichier){
 for(int j=0;j<NB_PARAM;j++)
 {
 for(int i=0;i<NB_STRESS;i++){
@@ -226,4 +226,11 @@ fichier >>tab_param[j][i];
 }
 }
 fichier.close();
+}
+else
+{
+cout<<"Erreur ouverture fichier"<<endl;
+choix_stress();
+sauvegarde();
+}
 }
